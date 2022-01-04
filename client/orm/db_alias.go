@@ -57,13 +57,14 @@ var _ Driver = new(driver)
 var (
 	dataBaseCache = &_dbCache{cache: make(map[string]*alias)}
 	drivers       = map[string]DriverType{
-		"mysql":    DRMySQL,
-		"postgres": DRPostgres,
-		"sqlite3":  DRSqlite,
-		"tidb":     DRTiDB,
-		"oracle":   DROracle,
-		"oci8":     DROracle, // github.com/mattn/go-oci8
-		"ora":      DROracle, // https://github.com/rana/ora
+		"mysql":     DRMySQL,
+		"oceanbase": DRMySQL,
+		"postgres":  DRPostgres,
+		"sqlite3":   DRSqlite,
+		"tidb":      DRTiDB,
+		"oracle":    DROracle,
+		"oci8":      DROracle, // github.com/mattn/go-oci8
+		"ora":       DROracle, // https://github.com/rana/ora
 	}
 	dbBasers = map[DriverType]dbBaser{
 		DRMySQL:    newdbBaseMysql(),

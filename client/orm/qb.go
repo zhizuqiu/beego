@@ -49,6 +49,8 @@ type QueryBuilder interface {
 func NewQueryBuilder(driver string) (qb QueryBuilder, err error) {
 	if driver == "mysql" {
 		qb = new(MySQLQueryBuilder)
+	} else if driver == "oceanbase" {
+		qb = new(MySQLQueryBuilder)
 	} else if driver == "tidb" {
 		qb = new(TiDBQueryBuilder)
 	} else if driver == "postgres" {
